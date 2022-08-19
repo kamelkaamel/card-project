@@ -1,0 +1,204 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*utility classes*/
+:root{
+    /*colors*/
+    --clr-primary-d-cyan:hsl(158, 36%, 37%);
+    --clr-primary-cream:hsl(30, 38%, 92%);
+
+    --clr-secondary-vd-blue:hsl(212, 21%, 14%);
+    --clr-secondary-d-grayish-blue: hsl(228, 12%, 48%);
+    --clr-secondary-white:hsl(0, 0%, 100%);
+    --clr-vd-cyan:hsl(159, 34%, 32%);
+    /*font*/
+    --fs-paragraph: 14px;
+    --fs-200: 1rem;
+
+    --ff-montserat:'Montserrat', sans-serif;
+    --ff-fraunces: 'Fraunces', serif;
+
+    --fw-bold: 500;
+    --fw-bolder: 700;
+
+
+}
+body{
+    background: var(--clr-primary-cream);
+}
+.image-preview img{
+    width: 300px;
+    border-radius: 1rem 0 0 1rem;
+}
+.flow{
+    display: flex;
+}
+.absolute{
+    position: absolute;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+p{
+    width: 26ch;
+    font-family: var(--ff-montserat);
+    color: var(--clr-secondary-d-grayish-blue);
+    font-size: var(--fs-paragraph);
+}
+h1{
+    font-family: var(--ff-fraunces);
+    width: 10ch;
+    line-height: 1;
+    color: var(--clr-secondary-vd-blue);
+    
+}
+h2{
+    font-family: var(--ff-montserat);
+    color: var(--clr-secondary-d-grayish-blue);
+    font-weight: 400;
+    font-size: var(--fs-paragraph);
+    padding-bottom: 1rem;
+}
+h3{
+    font-family: var(--ff-montserat);
+    opacity: 0.7;
+    font-size: var(--fs-paragraph);
+}
+.discription{
+    width: 300px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+
+}
+.prices{
+    
+    justify-content: start;
+    
+}
+.prices h1{
+    color: var(--clr-primary-d-cyan);
+    
+    width: fit-content;
+
+}
+.prices h3{
+    text-decoration: line-through;
+    
+}
+.card{
+    background: var(--clr-secondary-white);
+    border-radius: 1rem;
+}
+.button{
+    font-family: var(--ff-montserat);
+    background: var(--clr-primary-d-cyan);
+    border: none;
+    border-radius: 1rem;
+    padding: .8rem 2.5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--clr-secondary-white);
+    font-weight: var(--fw-bolder);
+    font-size: var(--fs-200);
+}
+.button img{
+    width: 1rem;
+    
+}
+
+.button:hover,
+.button:focus{
+    background: var(--clr-vd-cyan);
+    cursor: pointer;
+}
+@media (max-width: 550px){
+  .card{
+    flex-direction: column;
+    
+
+  }
+  .image-preview img{
+    border-radius: 1rem 1rem 0 0;
+    height: 15rem;
+    object-fit: cover;
+    object-position: 70% 40%;
+    
+  }
+  .discription{
+    padding: 1rem;
+    height: 25rem;
+  }
+}
